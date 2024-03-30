@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   class-variance-authority:
     specifier: ^0.7.0
@@ -7,6 +11,9 @@ dependencies:
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
+  lucide:
+    specifier: ^0.363.0
+    version: 0.363.0
   lucide-react:
     specifier: ^0.363.0
     version: 0.363.0(react@18.0.0)
@@ -1873,6 +1880,10 @@ packages:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.0.0
+    dev: false
+
+  /lucide@0.363.0:
+    resolution: {integrity: sha512-/AAsZdclXMOn4Q3wWw6kcyYHzwyafoRyEOCD9bVlhRTU5rxJ3Gs2Hj70xwOhK2z14Iukmon6dTvgzhkoj21YZg==}
     dev: false
 
   /merge2@1.4.1:
