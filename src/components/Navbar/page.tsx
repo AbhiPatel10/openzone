@@ -8,10 +8,9 @@ const Navbar = () => {
     const [state, setState] = React.useState(false)
 
     const menus = [
-        { title: "Home", path: "/your-path" },
-        { title: "Blog", path: "/your-path" },
-        { title: "About Us", path: "/your-path" },
-        { title: "Contact Us", path: "/your-path" },
+        { title: "Home", path: "/" },
+        { title: "About Us", path: "/" },
+        { title: "Contact Us", path: "/" },
     ]
     return (
         <nav className="bg-white w-full border-b md:border-0">
