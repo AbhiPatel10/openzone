@@ -9,7 +9,7 @@ const Navbar = () => {
 
     const menus = [
         { title: "Home", path: "/" },
-        { title: "About Us", path: "/" },
+        { title: "Projects", path: "/projects" },
         { title: "Contact Us", path: "/" },
     ]
     return (
