@@ -37,7 +37,6 @@ const Project: React.FC = () => {
 
     return (
         <>
-            <Navbar />
             <div className="flex justify-center flex-col items-center">
                 <h1 className="bg-gradient-to-r text-3xl font-bold from-blue-500 to-black text-transparent bg-clip-text">Search Open Source Projects</h1>
                 <div className="relative flex w-96 mt-10" data-twe-input-wrapper-init data-twe-input-group-ref>
