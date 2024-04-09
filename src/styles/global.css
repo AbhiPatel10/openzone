@@ -74,3 +74,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+    font-family: 'DM_Mono';
+    src: url('/src/fonts/DMMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
