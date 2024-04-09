@@ -1,9 +1,11 @@
+import FeatureSection from "@/components/FeatureSection/page";
 import HeroSection from "@/components/HeroSection/page";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main>
       <HeroSection />
+      <FeatureSection />
     </main>
   );
 }
