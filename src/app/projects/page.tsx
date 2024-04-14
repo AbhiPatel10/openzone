@@ -79,7 +79,7 @@ const Project: React.FC = () => {
                 {error && <p>{error}</p>}
                 <div className="grid grid-cols-3 gap-4 mt-4">
                     {searchResults.map((project, index) => (
-                        <div key={index} className="bg-gray-200 p-4 rounded shadow-md">
+                        <div key={index} className="bg-gray-200 p-3 ounded shadow-md">
                             <h2 className="text-lg font-semibold">{project.name}</h2>
                             <p>{`Stars: ${project.stargazers_count}`}</p>
                             <p>{`URL: ${project.html_url}`}</p>
