@@ -1,138 +1,36 @@
-import React from 'react'
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
-import Link from 'next/link'
+import React from "react";
+import { Facebook, Instagram, Linkedin, Twitter, X } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 w-full">
-    <div
-      className="
-      container
-      flex flex-col flex-wrap
-      px-4
-      py-16
-      mx-auto
-      md:items-center
-      lg:items-start
-      md:flex-row md:flex-nowrap
-    "
-    >
-      <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
-        <Link href={"/"} className="text-2xl text-white">
-            OpenZone
-        </Link>
-        <p className="mt-2 text-xs text-justify text-gray-400">
-          Footer is a valuable resource that complements the main content of
-          the website by providing quick links, legal information, and ways to
-          connect, creating a well-rounded and user-friendly experience for
-          visitors.
+    <footer className="text-gray-600 body-font bg-gray-900">
+      <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <Link href="/">
+              <h1 className="text-3xl font-bold text-primary">OpenZone</h1>
+            </Link>
+        </a>
+        <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          © 2024 All rights reserved by <span className="text-primary">OpenZone</span>
         </p>
-        <div className="flex justify-center mt-4 space-x-4 lg:mt-2">
-          <Link href={""}>
-            <Facebook className="text-blue-500" />
-          </Link>
-          <Link href={""}>
-            <Twitter className="text-sky-300" />
-          </Link>
-          <Link href={""}>
-            <Instagram className="text-pink-500" />
-          </Link>
-          <Link href={""}>
-            <Linkedin className="text-blue-400" />
-          </Link>
-        </div>
+        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <a href="/" className="text-blue-400 transition hover:-translate-y-2 hover:scale-125 hover:cursor-pointer delay-100">
+            <Facebook className="w-5 h-5" />
+          </a>
+          <a href="/" className="ml-3  text-black transition hover:-translate-y-2 hover:scale-125 hover:cursor-pointer delay-100 ">
+            <X className="w-5 h-5" />
+          </a>
+          <a href="/" className="ml-3 text-blue-500 transition hover:-translate-y-2 hover:scale-125 hover:cursor-pointer delay-100">
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <a href="/" className="ml-3 text-red-600 transition hover:-translate-y-2 hover:scale-125 hover:cursor-pointer delay-100">
+            <Instagram className="w-5 h-5" />
+          </a>
+        </span>
       </div>
-      <div className="justify-between w-full mt-4 text-center lg:flex">
-        <div className="w-full px-4 lg:w-1/3 md:w-1/2">
-          <h2 className="mb-2 font-bold tracking-widest text-gray-100">
-            Quick Links
-          </h2>
-          <ul className="mb-8 space-y-2 text-sm list-none">
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 1
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 2
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 3
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 4
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="w-full px-4 lg:w-1/3 md:w-1/2">
-          <h2 className="mb-2 font-bold tracking-widest text-gray-100">
-            Quick Links
-          </h2>
-          <ul className="mb-8 space-y-2 text-sm list-none">
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 1
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 2
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 3
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 4
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="w-full px-4 lg:w-1/3 md:w-1/2">
-          <h2 className="mb-2 font-bold tracking-widest text-gray-100">
-            Quick Links
-          </h2>
-          <ul className="mb-8 space-y-2 text-sm list-none">
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 1
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 2
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 3
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="text-gray-300">
-                Link 4
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div className="flex justify-center ">
-      <p className="text-center text-white pb-2">
-        @2024 All rights reserved by your website.
-      </p>
-    </div>
-  </footer>
-  )
-}
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
