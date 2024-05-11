@@ -22,10 +22,14 @@ const Footer = () => {
             OpenZone
         </Link>
         <p className="mt-2 text-xs text-justify text-gray-400">
-          Footer is a valuable resource that complements the main content of
+          {/* Footer is a valuable resource that complements the main content of
           the website by providing quick links, legal information, and ways to
           connect, creating a well-rounded and user-friendly experience for
-          visitors.
+          visitors. */}
+          Discover and contribute to open source projects on GitHub with OpenZone. 
+          Explore diverse opportunities, join vibrant communities, 
+          and impact the future of software through meaningful collaboration.
+
         </p>
         <div className="flex justify-center mt-4 space-x-4 lg:mt-2">
           <Link href={""}>
@@ -70,6 +74,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+        
         <div className="w-full px-4 lg:w-1/3 md:w-1/2">
           <h2 className="mb-2 font-bold tracking-widest text-gray-100">
             Quick Links

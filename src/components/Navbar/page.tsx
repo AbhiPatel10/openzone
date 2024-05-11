@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 import LoginButton from '../LoginButton/page'
-
+import { Icons } from '../ui/icons'
 const Navbar = () => {
     const [state, setState] = React.useState(false)
 
@@ -24,7 +24,7 @@ const Navbar = () => {
                             className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
                             onClick={() => setState(!state)}
                         >
-                            *
+                            <Icons.menu/>
                         </button>
                     </div>
                 </div>
