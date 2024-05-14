@@ -6,29 +6,32 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: A clear and concise description of any alternative solution or features you've considered.
+      label: 'Description'
+      description: 'A clear and concise description of any alternative solution or features you''ve considered.'
+      placeholder: 'Please provide a description'
     validations:
       required: true
   - type: textarea
     id: screenshots
     attributes:
-      label: Screenshots
-      description: Please add screenshots if applicable
+      label: 'Screenshots'
+      description: 'Please add screenshots if applicable.'
+      placeholder: 'You can add screenshots here'
     validations:
       required: false
   - type: textarea
     id: extrainfo
     attributes:
-      label: Additional Information
-      description: Add any other context or anything else about this idea
+      label: 'Additional Information'
+      description: 'Add any other context or anything else about this idea.'
+      placeholder: 'Any additional information?'
     validations:
       required: false
   - type: checkboxes
     id: terms
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our Code of Conduct
+      label: 'Code of Conduct'
+      description: 'By submitting this issue, you agree to follow our Code of Conduct.'
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: 'I agree to follow this project''s Code of Conduct'
           required: true
