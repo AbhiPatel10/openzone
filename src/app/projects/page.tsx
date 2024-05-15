@@ -39,7 +39,7 @@ const Project: React.FC = () => {
         <>
             <div className="flex justify-center flex-col items-center">
                 <h1 className="bg-gradient-to-r text-3xl font-bold from-blue-500 to-black text-transparent bg-clip-text px-4 text-center pt-6">Search Open Source Projects</h1>
-                <div className="relative flex w-96 mt-10 px-5" data-twe-input-wrapper-init data-twe-input-group-ref>
+                <div className="relative flex w-96 mt-10 px-8" data-twe-input-wrapper-init data-twe-input-group-ref>
                     <input
                         type="text"
                         className="peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear border border-black"
