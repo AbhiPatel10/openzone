@@ -16,7 +16,6 @@ const Footer = () => {
       md:items-center
       lg:items-start
       md:flex-row md:flex-nowrap
-      space-x-16
     "
     >
       <div className="flex-shrink-0 w-96 mx-auto text-center md:mx-0 md:text-left">
