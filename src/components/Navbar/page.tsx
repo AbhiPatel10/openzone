@@ -34,12 +34,12 @@ const Navbar = () => {
                 >
                     <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                         {menus.map((item, idx) => (
-                            <li key={idx} className="text-gray-600 hover:text-indigo-600">
+                            <li key={idx} className="text-gray-600 hover:transition hover:text-indigo-600 hover:bg-slate-200 hover:p-2 duration-300 ease-in-out rounded-lg">
                                 <Link href={item.path}>{item.title}</Link>
                             </li>
                         ))}
 
-                        <li className='py-2 px-5 bg-black text-white rounded'><LoginButton /></li>
+                        <li className='py-2 px-5 bg-black text-white rounded hover:transition duration-200 ease hover:bg-slate-700'><LoginButton /></li>
                     </ul>
                 </div>
             </div>
