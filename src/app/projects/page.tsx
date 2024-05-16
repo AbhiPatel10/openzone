@@ -3,6 +3,7 @@
 import * as React from "react";
 import axios from 'axios';
 import Navbar from "@/components/Navbar/page";
+import Link from "next/link";
 
 interface Project {
     name: string;
@@ -77,12 +78,19 @@ const Project: React.FC = () => {
                 </div>
                 {loading && <p>Loading...</p>}
                 {error && <p>{error}</p>}
-                <div className="grid grid-cols-3 gap-4 mt-4">
+                <div className="p-4 grid grid-cols-3 gap-4 mt-2">
                     {searchResults.map((project, index) => (
-                        <div key={index} className="bg-gray-200 p-4 rounded shadow-md">
+                        <div key={index} className="bg-gray-200 p-4 overflow-hidden rounded shadow-md">
                             <h2 className="text-lg font-semibold">{project.name}</h2>
                             <p>{`Stars: ${project.stargazers_count}`}</p>
-                            <p>{`URL: ${project.html_url}`}</p>
+                            <div>
+                                <p>URL:</p>
+                                <p>
+                                    <Link className=" text-blue-500" href={project.html_url}>
+                                        {project.html_url}
+                                    </Link>
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
