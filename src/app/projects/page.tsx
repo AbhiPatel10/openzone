@@ -78,6 +78,7 @@ const Project: React.FC = () => {
                 </div>
                 {loading && <p>Loading...</p>}
                 {error && <p>{error}</p>}
+                {searchResults.length === 0 && <p className="mt-6">No results found</p>}
                 <div className="p-4 grid grid-cols-3 gap-4 mt-2">
                     {searchResults.map((project, index) => (
                         <div key={index} className="bg-gray-200 p-4 overflow-hidden rounded shadow-md">
@@ -85,11 +86,11 @@ const Project: React.FC = () => {
                             <p>{`Stars: ${project.stargazers_count}`}</p>
                             <div>
                                 <p>URL:</p>
-                                <p>
+                                <div className="w-auto overflow-hidden">
                                     <Link className=" text-blue-500" href={project.html_url}>
                                         {project.html_url}
                                     </Link>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     ))}
