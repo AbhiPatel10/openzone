@@ -4,6 +4,7 @@ import * as React from "react";
 import axios from 'axios';
 import Navbar from "@/components/Navbar/page";
 import Link from "next/link";
+import FadeLoader from "react-spinners/FadeLoader";
 
 interface Project {
     name: string;
@@ -13,12 +14,14 @@ interface Project {
 
 const Project: React.FC = () => {
     const [query, setQuery] = React.useState('');
+    const [isSearched, setIsSearched] = React.useState(false);
     const [searchResults, setSearchResults] = React.useState<any[]>([]);
     const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState('');
 
     const handleSearch = async () => {
         try {
+            setIsSearched(true);
             setLoading(true);
             setError('');
             const response = await axios.get('https://api.github.com/search/repositories', {
@@ -29,6 +32,9 @@ const Project: React.FC = () => {
                 }
             });
             setSearchResults(response.data.items);
+            if (response.data.items.length !== 0) {
+                setIsSearched(false);
+            }
         } catch (error) {
             setError('Failed to fetch data');
         } finally {
@@ -76,9 +82,9 @@ const Project: React.FC = () => {
                         </span>
                     </button>
                 </div>
-                {loading && <p>Loading...</p>}
+                {loading && <div className="flex justify-center p-4"><FadeLoader color="#36d7b7" loading={loading} /></div>}
                 {error && <p>{error}</p>}
-                {searchResults.length === 0 && <p className="mt-6">No results found</p>}
+                {!loading && isSearched && searchResults.length === 0 && <p className="mt-6">No results found</p>}
                 <div className="p-4 grid grid-cols-3 gap-4 mt-2">
                     {searchResults.map((project, index) => (
                         <div key={index} className="bg-gray-200 p-4 overflow-hidden rounded shadow-md">
