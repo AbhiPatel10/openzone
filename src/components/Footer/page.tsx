@@ -43,7 +43,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href={"/"} className="text-gray-400" target='_blank'>
+              <Link href={"/ContactSection"} className="text-gray-400" target='_blank'>
                 Contact Us
               </Link>
             </li>
