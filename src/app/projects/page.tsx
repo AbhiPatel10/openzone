@@ -38,8 +38,8 @@ const Project: React.FC = () => {
     return (
         <>
             <div className="flex justify-center flex-col items-center">
-                <h1 className="bg-gradient-to-r text-3xl font-bold from-blue-500 to-black text-transparent bg-clip-text">Search Open Source Projects</h1>
-                <div className="relative flex w-96 mt-10" data-twe-input-wrapper-init data-twe-input-group-ref>
+                <h1 className="bg-gradient-to-r text-3xl font-bold from-blue-500 to-black text-transparent bg-clip-text px-4 text-center pt-6">Search Open Source Projects</h1>
+                <div className="relative flex w-96 mt-10 px-8" data-twe-input-wrapper-init data-twe-input-group-ref>
                     <input
                         type="text"
                         className="peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear border border-black"
@@ -77,12 +77,12 @@ const Project: React.FC = () => {
                 </div>
                 {loading && <p>Loading...</p>}
                 {error && <p>{error}</p>}
-                <div className="grid grid-cols-3 gap-4 mt-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 p-4">
                     {searchResults.map((project, index) => (
-                        <div key={index} className="bg-gray-200 p-4 rounded shadow-md">
+                        <div key={index} className="bg-gray-200 p-6 rounded shadow-md">
                             <h2 className="text-lg font-semibold">{project.name}</h2>
-                            <p>{`Stars: ${project.stargazers_count}`}</p>
-                            <p>{`URL: ${project.html_url}`}</p>
+                            <p className="text-sm">{`Stars: ${project.stargazers_count}`}</p>
+                            <p className=" inline-block text-sm break-all lg:text-[1.7vh] "><a target="_blank" href={`${project.html_url}`}>URL: <span className="hover:text-gray-600">{`${project.html_url}`}</span></a></p>
                         </div>
                     ))}
                 </div>
