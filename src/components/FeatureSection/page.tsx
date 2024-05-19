@@ -11,28 +11,18 @@ const FeatureSection: React.FC = () => {
     const features: Feature[] = [
         {
             title: "Project Discoverability",
-            description: "Easily discover projects aligned with your interests and skill set. Our intuitive search tools allow you to filter through a diverse array of open-source projects by language, difficulty level, and tags. Find your next challenge or passion project in just a few clicks.",
+            description: "Easily search for open-source projects based on various criteria such as programming language, tags, and project activity.",
             icon: Search,
         },
         {
             title: "Personalized User Profiles",
-            description: "Create a dynamic profile that showcases your contributions and achievements in the open-source community. Highlight the projects you’ve impacted, share your skills, and grow your network.",
+            description: "Maintain a comprehensive profile showcasing your contributions to open-source projects. Your profile will highlight the projects you've contributed to and your impact on them.",
             icon: User,
         },
         {
             title: "Track Your Contributions",
-            description: "Our platform provides comprehensive tracking tools to monitor your involvement in projects. From pull requests and commits to managing issues, keep a detailed record of your contributions and milestones.",
+            description: "Keep track of your contributions, including pull requests, commits, and issues opened or resolved.",
             icon: Activity,
-        },
-        {
-            title: "Events",
-            description: "Stay connected and informed with the latest happenings in the open-source world. Whether you're looking for hackathons, workshops, or webinars, our events calendar is your go-to resource for community gatherings. Enhance your skills, meet like-minded developers, and get involved in exciting collaborations.",
-            icon: Calendar,
-        },
-        {
-            title: "Communities",
-            description: "Join vibrant communities that match your interests and expertise. Our platform helps you find the best community for networking, learning, and contributing. Whether you are a beginner or an experienced developer, being part of a community can amplify your impact and provide valuable support.",
-            icon: Users,
         },
     ];
 
