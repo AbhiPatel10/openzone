@@ -11,7 +11,7 @@ const Navbar = () => {
     const menus = [
         { title: "Home", path: "/" },
         { title: "Projects", path: "/projects" },
-        { title: "Contact Us", path: "/" },
+        { title: "Contact Us", path: "/ContactSection" },
     ]
     return (
         <nav className="bg-white w-full border-b md:border-0">
@@ -29,6 +29,7 @@ const Navbar = () => {
                         </button>
                     </div>
                 </div>
+                
                 <div
                     className={` pb-3 mt-8 md:block md:pb-0 md:mt-0 ${state ? "block" : "hidden"
                         }`}
