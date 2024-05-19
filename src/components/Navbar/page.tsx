@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import LoginButton from '../LoginButton/page'
 import { MenuIcon } from 'lucide-react'
+import { RxCross1 } from "react-icons/rx";
 
 const Navbar = () => {
     const [state, setState] = React.useState(false)
@@ -20,29 +21,36 @@ const Navbar = () => {
                     <Link href="/">
                         <h1 className="text-3xl font-bold text-primary">OpenZone</h1>
                     </Link>
-                    <div className="md:hidden">
+                    <div className="md:hidden mr-3">
                         <button
                             className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
                             onClick={() => setState(!state)}
                         >
-                            <MenuIcon />
+                           {state?<RxCross1 />:<MenuIcon/>} 
                         </button>
                     </div>
                 </div>
                 
                 <div
-                    className={` pb-3 mt-8 md:block md:pb-0 md:mt-0 ${state ? "block" : "hidden"
+                    className={` pb-3  gap-2 mt-8 md:block md:pb-0 md:mt-0 ${state ? "block" : "hidden"
                         }`}
                 >
-                    <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                        {menus.map((item, idx) => (
-                            <li key={idx} className="text-gray-600 hover:transition hover:text-indigo-600 hover:bg-slate-200 hover:p-2 duration-300 ease-in-out rounded-lg">
-                                <Link href={item.path}>{item.title}</Link>
-                            </li>
-                        ))}
+                    <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-8 md:space-y-0 mt-8 pb-3 md:pb-0 md:mt-0">
+    <ul className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
+        {menus.map((item, idx) => (
+            <li
+                key={idx}
+                className="text-gray-600 text-center  transition ease-in-out duration-300 hover:text-indigo-600 hover:bg-slate-200 hover:px-4 hover:py-2 rounded-lg"
+            >
+                <Link href={item.path}>{item.title}</Link>
+            </li>
+        ))}
+    </ul>
+    <div className="py-2 px-5 bg-black text-white rounded-md transition ease-in-out duration-200 hover:bg-slate-700">
+        <LoginButton />
+    </div>
+</div>
 
-                        <li className='py-2 px-5 bg-black text-white rounded hover:transition duration-200 ease hover:bg-slate-700'><LoginButton /></li>
-                    </ul>
                 </div>
             </div>
         </nav>
