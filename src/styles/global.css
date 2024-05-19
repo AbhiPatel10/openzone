@@ -82,3 +82,18 @@
     font-style: normal;
 }
 
+.sm\:w-32:hover{
+  transform:scale(1.05);
+    /* box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.4); */
+    background: radial-gradient(100% 100% at 50% 50%, rgb(32, 81, 34) 0,
+     #075180 40%, #ffffff00 50%);
+     color:rgb(247, 248, 249)
+
+  
+}
+.text-white:hover{
+  color:rgb(247, 248, 249);
+  transform:scale(1.05);
+  background-color: #075180;
+  box-shadow: 0 4px 6px rgba(7, 81, 128, 0.5);
+}
