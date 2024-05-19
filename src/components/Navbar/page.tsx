@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 import LoginButton from '../LoginButton/page'
+import { MenuIcon } from 'lucide-react'
 
 const Navbar = () => {
     const [state, setState] = React.useState(false)
@@ -10,7 +11,7 @@ const Navbar = () => {
     const menus = [
         { title: "Home", path: "/" },
         { title: "Projects", path: "/projects" },
-        { title: "Contact Us", path: "/" },
+        { title: "Contact Us", path: "/ContactSection" },
     ]
     return (
         <nav className="bg-white w-full border-b md:border-0">
@@ -24,10 +25,11 @@ const Navbar = () => {
                             className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
                             onClick={() => setState(!state)}
                         >
-                            *
+                            <MenuIcon />
                         </button>
                     </div>
                 </div>
+                
                 <div
                     className={` pb-3 mt-8 md:block md:pb-0 md:mt-0 ${state ? "block" : "hidden"
                         }`}
