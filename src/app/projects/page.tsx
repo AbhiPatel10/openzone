@@ -2,6 +2,8 @@
 
 import * as React from "react";
 import axios from 'axios';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'; 
 import Navbar from "@/components/Navbar/page";
 
 interface Project {
@@ -9,7 +11,9 @@ interface Project {
     stargazers_count: number;
     html_url: string;
 }
-
+const skeletonStyle = {
+    marginBottom: '20px', // Adjust this value to increase the gap
+};
 const Project: React.FC = () => {
     const [query, setQuery] = React.useState('');
     const [searchResults, setSearchResults] = React.useState<any[]>([]);
@@ -75,16 +79,24 @@ const Project: React.FC = () => {
                         </span>
                     </button>
                 </div>
-                {loading && <p>Loading...</p>}
                 {error && <p>{error}</p>}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 p-4">
-                    {searchResults.map((project, index) => (
+                    {/* Adding skeletons for better user experience */}
+                {loading ?    
+                    Array(9).fill(0).map((_, index)  => (
+                        <div key={index} className="bg-gray-200 p-6 rounded shadow-md"  style={skeletonStyle}>
+                            <h2 className="text-lg font-semibold"><Skeleton width={200} /></h2>
+                            <p className="text-sm"><Skeleton width={100} /></p>
+                            <p className="inline-block text-sm break-all lg:text-[1.7vh]"><Skeleton width={250} /></p>
+                        </div>
+
+                    )): (searchResults.map((project, index) => (
                         <div key={index} className="bg-gray-200 p-6 rounded shadow-md">
                             <h2 className="text-lg font-semibold">{project.name}</h2>
                             <p className="text-sm">{`Stars: ${project.stargazers_count}`}</p>
                             <p className=" inline-block text-sm break-all lg:text-[1.7vh] "><a target="_blank" href={`${project.html_url}`}>URL: <span className="hover:text-gray-600">{`${project.html_url}`}</span></a></p>
                         </div>
-                    ))}
+                    ))) }
                 </div>
             </div>
         </>
