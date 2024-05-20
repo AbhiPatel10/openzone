@@ -76,9 +76,21 @@
 }
 
 @font-face {
-    font-family: 'DM_Mono';
-    src: url('/src/fonts/DMMono-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "DM_Mono";
+  src: url("/src/fonts/DMMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(28, 38, 52); /* Color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(230, 240, 230); /* Color of the thumb */
+  border-radius: 6px; /* Roundness of the thumb */
+}
