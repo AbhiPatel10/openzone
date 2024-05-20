@@ -47,6 +47,16 @@ const Footer = () => {
                 Contact Us
               </Link>
             </li>
+            <li>
+              <Link href={"PrivacyPolicy"} className="text-gray-400" >
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href={"TermsAndConditions"} className="text-gray-400" >
+                Terms and Conditions
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="w-full px-4 lg:w-1/3 md:w-1/2">
