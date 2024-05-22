@@ -33,10 +33,10 @@ const Navbar = () => {
                 </div>
 
                 <div
-                    className={` pb-3  gap-2 mt-8 md:block md:pb-0 md:mt-0 ${state ? "block absolute z-20 bg-white w-full p-0 left-0 mt-0" : "hidden"
+                    className={` pb-3  gap-2 mt-8  md:block md:pb-0 max-md:mt-0 md:mt-0 ${state ? "block absolute z-20 bg-white w-full p-0 left-0 mt-0" : "hidden"
                         }`}
                 >
-                    <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-8 md:space-y-0 pt-8 pb-3 md:pb-0 md:mt-0">
+                    <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-8 md:space-y-0 pb-3 md:pb-0 md:mt-0">
     <ul className="flex flex-col md:flex-row justify-center items-center md:space-y-0 md:space-x-6">
         {menus.map((item, idx) => (
             <li
