@@ -87,19 +87,19 @@ const Footer = () => {
           <Link href="https://github.com/AbhiPatel10/openzone" target='_blank'>
             <Github className="h-10 w-12 text-slate-300 rounded-full border-2 p-[5px] hover:transition duration-200 ease hover:bg-slate-600" />
           </Link>
-          <Link href="mailto:mr.abhiofficial100@gmail.com" target=''>
+          <Link href="mailto:abhipatel.dev@gmail.com" target=''>
             <Mail className="h-10 w-12 text-slate-300 rounded-full border-2 p-[5px] hover:transition duration-200 ease hover:bg-slate-600" />
           </Link>
           <Link href="https://www.facebook.com" target='_blank'>
             <Facebook className="h-10 w-12 text-slate-300 rounded-full border-2 p-[5px] hover:transition duration-200 ease hover:bg-slate-600" />
           </Link>
-          <Link href="https://twitter.com/AbhiPatel0001" target='_blank'>
+          <Link href="https://twitter.com" target='_blank'>
             <Twitter className="h-10 w-12 text-slate-300 rounded-full border-2 p-[5px] hover:transition duration-200 ease hover:bg-slate-600" />
           </Link>
-          <Link href="https://www.instagram.com/_.abhipatell._/" target='_blank'>
+          <Link href="https://www.instagram.com" target='_blank'>
             <Instagram className="h-10 w-12 text-slate-300 rounded-full border-2 p-[5px] hover:transition duration-200 ease hover:bg-slate-600" />
           </Link>
-          <Link href="https://www.linkedin.com/in/abhipatel001/" target='_blank'>
+          <Link href="https://www.linkedin.com/in" target='_blank'>
             <Linkedin className="h-10 w-12 text-slate-300 rounded-full border-2 p-[5px] hover:transition duration-200 ease hover:bg-slate-600" />
           </Link>
         </div>
