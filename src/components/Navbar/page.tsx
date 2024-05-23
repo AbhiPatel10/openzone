@@ -16,7 +16,7 @@ const Navbar = () => {
         { title: "Contact Us", path: "/ContactSection" },
     ]
     return (
-        <nav className="bg-white w-full border-b md:border-0">
+        <nav className="sticky top-0 z-99 bg-white w-full border-b-3 border-b-[#151d2c] border-2">
             <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8">
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
                     <Link href="/">
