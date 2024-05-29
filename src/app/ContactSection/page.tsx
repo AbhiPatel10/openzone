@@ -14,8 +14,9 @@ const ContactSection = () => {
           <p className="text-center m-5 text-xl">
             Get in touch with us in case of any queries,suggestions or feedback.
           </p>
-          <div className="border-4 inline-block mx-80 my-5 bg-slate-100">
-            <div className="flex justify-center m-5">
+          {/* make it responsive */}
+          <div className="border-4 inline-block md:mx-80 my-5 bg-slate-100 justify-evenly w-auto md:w-auto lg:w-3/4  mt-8 lg:flex flex-wrap max-md:mt-16">  
+            <div className="md:flex md:shrink-0 justify-center items-center m-5">
               <div>
                 <form action="" className="w-96">
                   <label
