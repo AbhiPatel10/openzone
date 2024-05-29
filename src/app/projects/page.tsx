@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -19,6 +19,29 @@ const Project: React.FC = () => {
   const [searchResults, setSearchResults] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState("");
+  const [page, setPage] = React.useState(0);
+
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  React.useEffect(() => {
+    const pageno = searchParams.get("pageno");
+    console.log(pageno);
+    pageno ? setPage(parseInt(pageno, 0)) : setPage(1);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [searchParams]);
+
+  const pageChange = (i: number) => {
+    const params = new URLSearchParams(searchParams);
+    setPage(i);
+    params.set("pageno", i.toString());
+    replace(`${pathname}?${params.toString()}`);
+  };
 
   const handleSearch = async () => {
     try {
@@ -32,6 +55,7 @@ const Project: React.FC = () => {
         },
       });
       setSearchResults(response.data.items);
+      replace(`${pathname}`);
     } catch (error) {
       setError("Failed to fetch data");
     } finally {
@@ -39,7 +63,7 @@ const Project: React.FC = () => {
     }
   };
   return (
-    <div className="flex justify-center flex-col items-center">
+    <div className="flex justify-center flex-col items-center  ">
       <h1 className="bg-gradient-to-r text-3xl font-bold from-blue-500 to-black text-transparent bg-clip-text px-4 text-center pt-6">Search Open Source Projects</h1>
       <div className="relative flex w-96 mt-10 px-8" data-twe-input-wrapper-init data-twe-input-group-ref>
         <input
@@ -71,7 +95,18 @@ const Project: React.FC = () => {
         </button>
       </div>
       {error && <p>{error}</p>}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 p-4">
+
+      {/* Showing current items in page */}
+
+      {searchResults.length > 0 && (
+        <p className=" text-zinc-500  italic font-serif font-semibold w-full mt-5 px-4 md:px-10 max-w-screen-xl mx-auto  ">
+          Showing:{" "}
+          <span className=" font-normal">
+            {page * 9 - 8} - {searchResults.length < page * 9 ? searchResults.length : page * 9} of {searchResults.length} Items
+          </span>
+        </p>
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 p-4  ">
         {/* Adding skeletons for better user experience */}
         {loading
           ? Array(9)
@@ -89,7 +124,7 @@ const Project: React.FC = () => {
                   </p>
                 </div>
               ))
-          : searchResults.map((project, index) => (
+          : searchResults.slice(page * 9 - 9, page * 9).map((project, index) => (
               <div key={index} className="bg-gray-200 p-6 rounded shadow-md">
                 <h2 className="text-lg font-semibold">{project.name}</h2>
                 <p className="text-sm">{`Stars: ${project.stargazers_count}`}</p>
@@ -101,6 +136,35 @@ const Project: React.FC = () => {
               </div>
             ))}
       </div>
+
+      {/* Pagination section */}
+      {searchResults.length > 0 && (
+        <section className=" w-full flex items-center justify-center gap-x-2 text-white  my-10  text-[0.8rem] ">
+          {/* Each page contains 20 data */}
+
+          <button className={` disabled: px-3 rounded-md py-1 ${page <= 1 ? "pointer-events-none bg-zinc-900" : "cursor-pointer bg-blue-500 "} `} onClick={() => pageChange(page - 1)}>
+            Previous
+          </button>
+
+          {[...Array(Math.ceil(searchResults.length / 9))].map((_, i) => {
+            return (
+              <span
+                key={i}
+                className={`cursor-pointer  size-6 flex items-center justify-center text-center rounded-full ${i + 1 == page ? "  bg-zinc-800 text-white " : "bg-white text-black"} `}
+                onClick={() => {
+                  pageChange(i + 1);
+                }}
+              >
+                {i + 1}
+              </span>
+            );
+          })}
+
+          <button className={`px-3  rounded-md py-1 ${page >= Math.ceil(searchResults.length / 9) ? "pointer-events-none bg-zinc-900" : "cursor-pointer bg-blue-500"} `} onClick={() => pageChange(page + 1)}>
+            Next
+          </button>
+        </section>
+      )}
     </div>
   );
 };
