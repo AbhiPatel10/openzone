@@ -37,12 +37,23 @@ const Project: React.FC = () => {
       setLoading(false);
     }
   };
-
   return (
     <div className="flex justify-center flex-col items-center">
       <h1 className="bg-gradient-to-r text-3xl font-bold from-blue-500 to-black text-transparent bg-clip-text px-4 text-center pt-6">Search Open Source Projects</h1>
       <div className="relative flex w-96 mt-10 px-8" data-twe-input-wrapper-init data-twe-input-group-ref>
-        <input type="text" className="peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear border border-black" placeholder="Search" aria-label="Search" id="search-focus" aria-describedby="basic-addon4" value={query} onChange={(e) => setQuery(e.target.value)} />
+        <input
+          type="text"
+          className="peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear border border-black"
+          placeholder="Search"
+          aria-label="Search"
+          id="search-focus"
+          aria-describedby="basic-addon4"
+          value={query}
+          onKeyUp={(e) => {
+            if (e.key == "Enter") handleSearch();
+          }}
+          onChange={(e) => setQuery(e.target.value)}
+        />
         <button
           onClick={handleSearch}
           className="relative z-[2] -ms-0.5 flex items-center rounded-e bg-primary px-5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
