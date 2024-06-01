@@ -4,6 +4,7 @@ import "../styles/global.css";
 import {NextAuthProvider} from "../app/provider"
 import Navbar from "@/components/Navbar/page";
 import Footer from "@/components/Footer/page";
+import Preloader from "@/components/Preloader/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <NextAuthProvider>
         <body className={inter.className}>
+          <Preloader/>
           <Navbar />
           {children}
           <Footer />
