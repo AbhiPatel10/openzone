@@ -8,16 +8,16 @@ const ContactSection = () => {
     <>
       <div id="contact">
         <div className="">
-          <h2 className="text-center text-black text-3xl font-bold ">
+          <h2 className="text-center text-black  text-3xl font-bold ">
             Contact Us
           </h2>
-          <p className="text-center m-5 text-xl">
+          <p className="text-center m-3 text-xl">
             Get in touch with us in case of any queries,suggestions or feedback.
           </p>
-          <div className="border-4 inline-block mx-80 my-5 bg-slate-100">
+          <div className="border-4 inline-block mx-3 md:mx-80 my-5 bg-slate-100">
             <div className="flex justify-center m-5">
               <div>
-                <form action="" className="w-96">
+                <form action="" className="w-[175px] md:w-96">
                   <label
                     htmlFor="name-icon"
                     className="block mb-2 text-sm py-3 font-medium text-gray-900 dark:text-white"
