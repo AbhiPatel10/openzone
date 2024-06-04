@@ -1,13 +1,13 @@
 "use client"
 
 import Link from 'next/link'
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import LoginButton from '../LoginButton/page'
 // import { MenuIcon } from 'lucide-react'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
 
-const Navbar = () => {
+export const Navbar = () => {
     const [state, setState] = React.useState(false)
 
     const menus = [
@@ -58,4 +58,24 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export const Preloader: React.FC = () => {
+    const [isVisible, setIsVisible] = useState(true);
+  
+    useEffect(() => {
+      const timer = setTimeout(() => { 
+        setIsVisible(false);
+      }, 2500);
+  
+      return () => clearTimeout(timer);
+    }, []);
+  
+    return (
+      <>
+        {isVisible && (
+          <div className="fixed inset-0 flex justify-center items-center bg-white z-50">
+            <div className="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 border-blue-900"></div>
+          </div>
+        )}
+      </>
+    );
+  };
