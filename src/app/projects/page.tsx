@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
