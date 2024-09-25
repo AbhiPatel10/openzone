@@ -70,7 +70,7 @@ const Project: React.FC = () => {
         </button>
       </div>
       {error && <p>{error}</p>}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 p-4 w-full max-w-screen-xl">
         {/* Adding skeletons for better user experience */}
         {loading
           ? Array(9)
