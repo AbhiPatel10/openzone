@@ -13,13 +13,13 @@ const FeatureSection = () => {
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                         </svg>
                     </div>
-                    <div className="flex flex-col flex-grow items-center gap-4 sm:text-left text-center mt-6 sm:mt-0">
+                    <div className="flex flex-col flex-grow gap-4 mt-6 sm:mt-0">
                         <h2 className="text-white text-lg title-font font-medium mb-2 py-2 px-5 rounded-full bg-primary w-fit">Project Desoverability</h2>
                         <p className="leading-relaxed text-base">Easily Discover Projects Aligned With Your Interests And Skill Set.</p>
                     </div>
                 </div>
                 <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-                    <div className="flex flex-col flex-grow items-center gap-4 sm:text-left text-center mt-6 sm:mt-0">
+                    <div className="flex flex-col flex-grow gap-4 items-end sm:text-right text-center mt-6 sm:mt-0">
                         <h2 className="text-white text-lg title-font font-medium mb-2 py-2 px-5 rounded-full bg-primary w-fit">Events</h2>
                         <p className="leading-relaxed text-base">Stay Updated On Upcoming Events, Hackathons, And Workshops Within The Open-Source Community.</p>
                     </div>
@@ -38,7 +38,7 @@ const FeatureSection = () => {
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                     </div>
-                    <div className="flex flex-col flex-grow items-center gap-4 sm:text-left text-center mt-6 sm:mt-0">
+                    <div className="flex flex-col flex-grow gap-4 sm:text-left text-center mt-6 sm:mt-0">
                         <h2 className="text-white text-lg title-font font-medium mb-2 py-2 px-5 rounded-full bg-primary w-fit">Communities</h2>
                         <p className="leading-relaxed text-base">Find Best Community to Join</p>
                     </div>
