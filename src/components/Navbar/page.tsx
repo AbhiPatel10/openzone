@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import React from 'react'
 import LoginButton from '../LoginButton/page'
-// import { MenuIcon } from 'lucide-react'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
 
@@ -27,7 +26,7 @@ const Navbar = () => {
                             className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
                             onClick={() => setState(!state)}
                         >
-                           {state?<RxCross1 />:<RxHamburgerMenu/>}
+                            {state ? <RxCross1 /> : <RxHamburgerMenu />}
                         </button>
                     </div>
                 </div>
@@ -37,20 +36,20 @@ const Navbar = () => {
                         }`}
                 >
                     <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-8 md:space-y-0 pb-3 md:pb-0 md:mt-0">
-    <ul className="flex flex-col md:flex-row justify-center items-center md:space-y-0 md:space-x-6">
-        {menus.map((item, idx) => (
-            <li
-                key={idx}
-                className="text-gray-600 text-center  transition ease-in-out duration-300 hover:text-indigo-600 hover:bg-slate-200 px-4 py-2 rounded-lg"
-            >
-                <Link href={item.path}>{item.title}</Link>
-            </li>
-        ))}
-    </ul>
-    <div className="py-2 px-5 bg-black text-white rounded-md transition ease-in-out duration-200 hover:bg-slate-700">
-        <LoginButton />
-    </div>
-</div>
+                        <ul className="flex flex-col md:flex-row justify-center items-center md:space-y-0 md:space-x-6">
+                            {menus.map((item, idx) => (
+                                <li
+                                    key={idx}
+                                    className="text-gray-600 text-center  transition ease-in-out duration-300 hover:text-indigo-600 hover:bg-slate-200 px-4 py-2 rounded-lg"
+                                >
+                                    <Link href={item.path}>{item.title}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="py-2 px-5 bg-black text-white rounded-md transition ease-in-out duration-200 hover:bg-slate-700">
+                            <LoginButton />
+                        </div>
+                    </div>
 
                 </div>
             </div>
