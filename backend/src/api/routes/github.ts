@@ -3,6 +3,6 @@ import { searchRepositoriesController } from "../controllers/github";
 
 const router = Router();
 
-router.get("/search", searchRepositoriesController);
+router.post("/search", searchRepositoriesController);
 
 export default router;

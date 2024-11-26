@@ -69,6 +69,82 @@ const Project: React.FC = () => {
           </span>
         </button>
       </div>
+      <form
+        // onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded px-8 py-6 w-full max-w-4xl"
+      >
+        <h1 className="text-2xl font-bold mb-6 text-gray-700 text-center">
+          Open-Source Matcher
+        </h1>
+
+        {/* Horizontal Row for Inputs */}
+        <div className="flex flex-wrap gap-4">
+          {/* Skills Input */}
+          <div className="flex-1">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Skills
+            </label>
+            <input
+              type="text"
+              name="skills"
+              placeholder="e.g., JavaScript, React"
+              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            />
+          </div>
+
+          {/* Experience Input */}
+          <div className="flex-1">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Experience Level
+            </label>
+            <select
+              name="experience"
+              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            >
+              <option value="">Select</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+
+          {/* Project Type Input */}
+          <div className="flex-1">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Project Type
+            </label>
+            <input
+              type="text"
+              name="projectType"
+              placeholder="e.g., Web development"
+              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            />
+          </div>
+
+          {/* Preferences Input */}
+          <div className="flex-1">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Contribution Preferences
+            </label>
+            <input
+              type="text"
+              name="preferences"
+              placeholder="e.g., Bug fixes"
+              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            />
+          </div>
+        </div>
+
+        {/* Submit Button */}
+        <div className="mt-6 text-center">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white font-bold py-2 px-8 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+          >
+            Find Projects
+          </button>
+        </div>
+      </form>
       {error && <p>{error}</p>}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 p-4 w-full max-w-screen-xl">
         {/* Adding skeletons for better user experience */}
